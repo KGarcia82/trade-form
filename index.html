@@ -52,7 +52,7 @@
 <body>
   <div class="container">
     <h2>Trade-In Vehicle Info</h2>
-    <form id="tradeForm">
+    <form id="tradeForm" onsubmit="return false;">
       <label for="name">Name</label>
       <input type="text" id="name" name="Name" required>
 
@@ -74,7 +74,7 @@
       <label for="notes">Additional Notes</label>
       <textarea id="notes" name="Notes" rows="4"></textarea>
 
-      <button type="submit">Submit</button>
+      <button id="submitBtn" type="submit">Submit</button>
     </form>
     <p id="responseMsg"></p>
   </div>
@@ -85,6 +85,7 @@
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+      console.log("Form submitted via JS");
       const data = new FormData(form);
 
       fetch('https://script.google.com/macros/s/AKfycbzt6U6pI4UKY6mzMItPvgLuhdQw90n3shzUDaGDPnf-2Zwq7QF5EeYvkGZCr5v-EOQ/exec', {
@@ -100,7 +101,7 @@
       .catch(error => {
         responseMsg.innerText = '❌ Error submitting form. Please try again.';
         responseMsg.style.color = 'red';
-        console.error(error);
+        console.error("Submission error:", error);
       });
     });
   </script>
