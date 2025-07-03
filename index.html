@@ -46,15 +46,15 @@
     #responseMsg {
       text-align: center;
       margin-top: 10px;
-      color: green;
       font-weight: bold;
+      color: green;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>Trade-In Vehicle Info</h2>
-    <form id="tradeForm">
+    <form id="tradeForm" method="POST" enctype="multipart/form-data">
       <label for="name">Name</label>
       <input type="text" id="name" name="Name" required>
 
@@ -76,33 +76,4 @@
       <label for="notes">Additional Notes</label>
       <textarea id="notes" name="Notes" rows="4"></textarea>
 
-      <button type="submit">Submit</button>
-    </form>
-    <p id="responseMsg"></p>
-  </div>
-
-  <script>
-    const form = document.getElementById('tradeForm');
-    const responseMsg = document.getElementById('responseMsg');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-
-      fetch('https://script.google.com/macros/s/AKfycbzt6U6pI4UKY6mzMItPvgLuhdQw90n3shzUDaGDPnf-2Zwq7QF5EeYvkGZCr5v-EOQ/exec', {
-        method: 'POST',
-        body: data
-      })
-      .then(response => response.text())
-      .then(result => {
-        responseMsg.innerText = 'Thanks! Your info has been submitted.';
-        form.reset();
-      })
-      .catch(error => {
-        responseMsg.innerText = 'Error submitting form. Please try again.';
-        responseMsg.style.color = 'red';
-      });
-    });
-  </script>
-</body>
-</html>
+      <button type="submit">Subm
