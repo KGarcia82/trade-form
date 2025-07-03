@@ -76,4 +76,35 @@
       <label for="notes">Additional Notes</label>
       <textarea id="notes" name="Notes" rows="4"></textarea>
 
-      <button type="submit">Subm
+      <button type="submit">Submit</button>
+    </form>
+    <p id="responseMsg"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('tradeForm');
+    const responseMsg = document.getElementById('responseMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      fetch('https://script.google.com/macros/s/AKfycbzt6U6pI4UKY6mzMItPvgLuhdQw90n3shzUDaGDPnf-2Zwq7QF5EeYvkGZCr5v-EOQ/exec', {
+        method: 'POST',
+        body: data
+      })
+      .then(response => response.text())
+      .then(result => {
+        responseMsg.innerText = '✅ Thanks! Your info has been submitted.';
+        responseMsg.style.color = 'green';
+        form.reset();
+      })
+      .catch(error => {
+        responseMsg.innerText = '❌ Error submitting form. Please try again.';
+        responseMsg.style.color = 'red';
+        console.error(error);
+      });
+    });
+  </script>
+</body>
+</html>
