@@ -74,8 +74,8 @@
     <label for="Notes">Additional Notes</label>
     <textarea name="Notes" rows="3"></textarea>
 
-    <!-- Hidden Status field to align with the expected column -->
-    <input type="hidden" name="Status" value="">
+    <!-- ✅ Hidden input to send "PENDING" to the sheet -->
+    <input type="hidden" name="Status" value="PENDING" />
 
     <button type="submit">Submit</button>
     <p class="success-message" id="successMessage">✅ Submission received! We’ll reach out shortly.</p>
@@ -92,12 +92,12 @@
         method: 'POST',
         body: formData,
       })
-        .then(response => response.text())
-        .then(() => {
-          successMessage.style.display = 'block';
-          form.reset();
-        })
-        .catch(error => alert('Something went wrong. Please try again.'));
+      .then(response => response.text())
+      .then(() => {
+        successMessage.style.display = 'block';
+        form.reset();
+      })
+      .catch(error => alert('Something went wrong. Please try again.'));
     });
   </script>
 </body>
