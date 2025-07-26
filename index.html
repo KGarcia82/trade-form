@@ -2,61 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vehicle Trade-In Appraisal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trade-In Appraisal Form</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f1f1f1;
-      margin: 0;
-      padding: 0;
+      background: #f4f4f4;
+      padding: 20px;
     }
     .container {
-      max-width: 700px;
-      margin: 40px auto;
+      max-width: 650px;
       background: white;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     label {
       display: block;
-      margin-top: 15px;
+      margin-top: 12px;
       font-weight: bold;
     }
     input, select, textarea {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      font-size: 14px;
-    }
-    input[type="file"] {
-      padding: 5px;
     }
     button {
-      margin-top: 20px;
-      width: 100%;
-      padding: 14px;
-      font-size: 16px;
       background: #007BFF;
       color: white;
       border: none;
-      border-radius: 6px;
+      padding: 14px;
+      width: 100%;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 16px;
       cursor: pointer;
     }
     button:hover {
       background: #0056b3;
     }
     #responseMsg {
-      margin-top: 20px;
-      font-weight: bold;
       text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -65,131 +60,131 @@
     <h2>Get Your Trade-In Appraisal</h2>
     <form id="tradeForm">
       <label>Name</label>
-      <input type="text" name="name" required />
+      <input type="text" name="name" required>
 
       <label>Email</label>
-      <input type="email" name="email" required />
+      <input type="email" name="email" required>
 
-      <label>Phone Number</label>
-      <input type="tel" name="phone" required />
+      <label>Phone</label>
+      <input type="tel" name="phone" required>
 
       <label>VIN</label>
-      <input type="text" name="vin" required />
+      <input type="text" name="vin" required>
 
       <label>Mileage</label>
-      <input type="number" name="mileage" required />
+      <input type="number" name="mileage" required>
 
       <label>Upload Photos</label>
-      <input type="file" name="photos" multiple required />
+      <input type="file" name="photo" accept="image/*" multiple required>
 
       <label>Has the vehicle ever been in an accident?</label>
       <select name="accident" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes</option>
       </select>
 
-      <label>Does the vehicle have any frame damage?</label>
+      <label>Any frame damage?</label>
       <select name="frame_damage" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes</option>
       </select>
 
-      <label>Does the vehicle have any flood damage?</label>
+      <label>Any flood damage?</label>
       <select name="flood_damage" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes</option>
       </select>
 
-      <label>Has the vehicle been smoked in?</label>
+      <label>Has it been smoked in?</label>
       <select name="smoke" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes</option>
       </select>
 
-      <label>Any mechanical issues or dashboard lights?</label>
+      <label>Mechanical issues or dashboard lights?</label>
       <select name="mechanical_issues" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes</option>
       </select>
 
-      <label>Has the odometer ever been broken or replaced?</label>
+      <label>Has the odometer ever been replaced?</label>
       <select name="odometer" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes</option>
       </select>
 
-      <label>Are any panels in need of paint/body work?</label>
+      <label>Any panels in need of paint or body work?</label>
       <select name="paint_body" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes, 1</option>
         <option>Yes, 2</option>
         <option>Yes, 3+</option>
       </select>
 
-      <label>Any rust or hail damage?</label>
+      <label>Rust or hail damage?</label>
       <select name="rust_hail" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes</option>
       </select>
 
-      <label>Are any interior parts broken?</label>
+      <label>Broken interior parts?</label>
       <select name="interior_parts" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes, 1</option>
         <option>Yes, 2</option>
         <option>Yes, 3+</option>
       </select>
 
-      <label>Rips, tears, or stains in interior?</label>
+      <label>Interior rips, tears, or stains?</label>
       <select name="interior_rips" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes, 1</option>
         <option>Yes, 2</option>
         <option>Yes, 3+</option>
       </select>
 
-      <label>Do any tires need replacing?</label>
+      <label>Tire condition</label>
       <select name="tires" required>
-        <option value="">Select</option>
-        <option>No</option>
-        <option>Yes, 1 or 2</option>
-        <option>Yes, 3 or 4</option>
+        <option value="">--Select--</option>
+        <option>No issues</option>
+        <option>Needs 1-2 tires</option>
+        <option>Needs 3-4 tires</option>
       </select>
 
       <label>How many keys do you have?</label>
       <select name="keys" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>2 or more</option>
         <option>1</option>
       </select>
 
       <label>Any aftermarket modifications?</label>
       <select name="aftermarket" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes</option>
       </select>
 
-      <label>Other issues we should know about?</label>
+      <label>Other known issues?</label>
       <select name="other_issues" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>No</option>
         <option>Yes</option>
       </select>
 
-      <label>Selling or Trading?</label>
+      <label>Selling or trading?</label>
       <select name="selling_or_trading" required>
-        <option value="">Select</option>
+        <option value="">--Select--</option>
         <option>Selling only</option>
         <option>Trading in</option>
         <option>Not sure</option>
@@ -198,32 +193,33 @@
       <label>Additional Notes</label>
       <textarea name="notes" rows="4"></textarea>
 
-      <button type="submit">Submit</button>
+      <button type="submit">Submit Appraisal</button>
     </form>
-    <div id="responseMsg"></div>
+    <p id="responseMsg"></p>
   </div>
 
   <script>
-    const form = document.getElementById("tradeForm");
-    const responseMsg = document.getElementById("responseMsg");
+    const form = document.getElementById('tradeForm');
+    const responseMsg = document.getElementById('responseMsg');
 
-    form.addEventListener("submit", async function (e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       const formData = new FormData(form);
 
-      try {
-        const res = await fetch("https://script.google.com/macros/s/AKfycbwCpuPPF1zm3TvZoOgSyy0D1S4uTzd6hw_CMCFeAeHgCiSa2FKmoVVu13GNfvb8T5Rg/exec", {
-          method: "POST",
-          body: formData,
-        });
-
-        const text = await res.text();
-        responseMsg.innerText = "✅ Thanks! We received your info.";
+      fetch('https://script.google.com/macros/s/AKfycbwCpuPPF1zm3TvZoOgSyy0D1S4uTzd6hw_CMCFeAeHgCiSa2FKmoVVu13GNfvb8T5Rg/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        responseMsg.innerText = "Thanks! We'll follow up soon.";
+        responseMsg.style.color = "green";
         form.reset();
-      } catch (error) {
-        responseMsg.innerText = "❌ Something went wrong. Please try again.";
+      })
+      .catch(error => {
+        responseMsg.innerText = "Submission failed. Please try again.";
         responseMsg.style.color = "red";
-      }
+      });
     });
   </script>
 </body>
