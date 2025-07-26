@@ -12,7 +12,7 @@
       padding: 0;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 30px auto;
       background: white;
       padding: 30px;
@@ -22,10 +22,6 @@
     h1 {
       text-align: center;
       color: #000;
-    }
-    h2, h3 {
-      color: #222;
-      margin-top: 30px;
     }
     label {
       display: block;
@@ -69,29 +65,29 @@
   <div class="container">
     <h1>Gerald Trade-In Appraisal</h1>
     <form>
-      <h2>Contact Info</h2>
       <label>Name</label>
       <input type="text" name="name" required>
+
       <label>Email</label>
       <input type="email" name="email" required>
+
       <label>Phone Number</label>
       <input type="tel" name="phone" required>
+
       <label>VIN</label>
       <input type="text" name="vin" required>
-
-      <h2>Vehicle Condition</h2>
-      <label>Overall Condition</label>
-      <select name="condition">
-        <option value="excellent">Excellent – Looks new, excellent mechanical condition (2%)</option>
-        <option value="very_good">Very Good – Minor cosmetic defects, good mechanical condition (28%)</option>
-        <option value="good">Good – Repairable cosmetic defects, some mechanical problems (50%)</option>
-        <option value="fair">Fair – Needs mechanical repairs (20%)</option>
-      </select>
 
       <label>Current Mileage</label>
       <input type="number" name="mileage" required>
 
-      <h3>Vehicle History</h3>
+      <label>Vehicle Condition</label>
+      <select name="condition">
+        <option value="excellent">Excellent – Looks new and is in excellent mechanical condition</option>
+        <option value="very_good">Very Good – Has minor cosmetic defects and is in good mechanical condition</option>
+        <option value="good">Good – Has repairable cosmetic defects and mechanical problems</option>
+        <option value="fair">Fair – Requires some mechanical repairs</option>
+      </select>
+
       <label>Has the vehicle ever been in an accident?</label>
       <div class="radio-group">
         <label><input type="radio" name="accident" value="no" checked> No</label>
@@ -116,7 +112,7 @@
         <label><input type="radio" name="smoke" value="yes"> Yes</label>
       </div>
 
-      <label>Any mechanical issues or warning lights on dashboard?</label>
+      <label>Any mechanical issues or warning lights?</label>
       <div class="radio-group">
         <label><input type="radio" name="mechanical_issues" value="no" checked> No</label>
         <label><input type="radio" name="mechanical_issues" value="yes"> Yes</label>
@@ -190,7 +186,7 @@
         <option value="not_sure">Not sure</option>
       </select>
 
-      <h2>Upload Photos</h2>
+      <label>Upload Photos</label>
       <input type="file" name="photos" accept="image/*" multiple>
 
       <label>Additional Notes</label>
