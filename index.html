@@ -11,7 +11,7 @@
       padding: 20px;
     }
     .container {
-      max-width: 500px;
+      max-width: 600px;
       background: white;
       padding: 25px;
       border-radius: 10px;
@@ -22,13 +22,16 @@
       text-align: center;
       margin-bottom: 20px;
     }
-    input, textarea {
+    input, textarea, select {
       width: 100%;
       padding: 12px;
       margin-top: 8px;
       margin-bottom: 16px;
       border: 1px solid #ccc;
       border-radius: 5px;
+    }
+    label {
+      font-weight: bold;
     }
     button {
       background: #007BFF;
@@ -55,23 +58,124 @@
   <div class="container">
     <h2>Trade-In Vehicle Info</h2>
     <form action="https://script.google.com/macros/s/AKfycbwCpuPPF1zm3TvZoOgSyy0D1S4uTzd6hw_CMCFeAeHgCiSa2FKmoVVu13GNfvb8T5Rg/exec" method="POST" enctype="multipart/form-data">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+      <label>Name</label>
+      <input type="text" name="name" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <label>Email</label>
+      <input type="email" name="email" required>
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required>
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required>
 
-      <label for="vin">VIN</label>
-      <input type="text" id="vin" name="vin" required>
+      <label>VIN</label>
+      <input type="text" name="vin" required>
 
-      <label for="mileage">Mileage</label>
-      <input type="number" id="mileage" name="mileage" required>
+      <label>Mileage</label>
+      <input type="number" name="mileage" required>
 
-      <label for="notes">Additional Notes</label>
-      <textarea id="notes" name="notes" rows="4"></textarea>
+      <label>Has the vehicle ever been in an accident?</label>
+      <select name="accident">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label>Does the vehicle have any frame damage?</label>
+      <select name="frame_damage">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label>Does the vehicle have any flood damage?</label>
+      <select name="flood_damage">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label>Has this vehicle been smoked in?</label>
+      <select name="smoke">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label>Any mechanical issues or warning lights?</label>
+      <select name="mechanical_issues">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label>Has the odometer ever been broken or replaced?</label>
+      <select name="odometer">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label>Panels in need of paint/body work?</label>
+      <select name="paint_body">
+        <option value="No">No</option>
+        <option value="Yes, 1">Yes, 1</option>
+        <option value="Yes, 2">Yes, 2</option>
+        <option value="Yes, 3+">Yes, 3+</option>
+      </select>
+
+      <label>Major rust or hail damage?</label>
+      <select name="rust_hail">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label>Interior parts broken or inoperable?</label>
+      <select name="interior_parts">
+        <option value="No">No</option>
+        <option value="Yes, 1">Yes, 1</option>
+        <option value="Yes, 2">Yes, 2</option>
+        <option value="Yes, 3+">Yes, 3+</option>
+      </select>
+
+      <label>Interior rips, tears, or stains?</label>
+      <select name="interior_rips">
+        <option value="No">No</option>
+        <option value="Yes, 1">Yes, 1</option>
+        <option value="Yes, 2">Yes, 2</option>
+        <option value="Yes, 3+">Yes, 3+</option>
+      </select>
+
+      <label>Do any tires need to be replaced?</label>
+      <select name="tires">
+        <option value="None">No</option>
+        <option value="1 or 2">Yes, 1 or 2</option>
+        <option value="3 or 4">Yes, 3 or 4</option>
+      </select>
+
+      <label>How many keys do you have?</label>
+      <select name="keys">
+        <option value="2+">2 or more</option>
+        <option value="1">1</option>
+      </select>
+
+      <label>Any aftermarket modifications?</label>
+      <select name="aftermarket">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label>Any other issues with the vehicle?</label>
+      <select name="other_issues">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label>Selling or trading in?</label>
+      <select name="selling_or_trading">
+        <option value="Selling only">Selling only</option>
+        <option value="Trading in">Trading in</option>
+        <option value="Not sure">Not sure</option>
+      </select>
+
+      <label>Upload Photos</label>
+      <input type="file" name="photos" accept="image/*" multiple>
+
+      <label>Additional Notes</label>
+      <textarea name="notes" rows="4"></textarea>
 
       <button type="submit">Submit</button>
     </form>
