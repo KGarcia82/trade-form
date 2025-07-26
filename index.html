@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trade-In Appraisal Form</title>
+  <title>Trade-In Appraisal</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -57,7 +57,7 @@
 </head>
 <body>
   <div class="container">
-    <h2>Get Your Trade-In Appraisal</h2>
+    <h2>Get Your Real Trade-In Offer</h2>
     <form id="tradeForm">
       <label>Name</label>
       <input type="text" name="name" required>
@@ -73,9 +73,6 @@
 
       <label>Mileage</label>
       <input type="number" name="mileage" required>
-
-      <label>Upload Photos</label>
-      <input type="file" name="photo" accept="image/*" multiple required>
 
       <label>Has the vehicle ever been in an accident?</label>
       <select name="accident" required>
@@ -193,7 +190,7 @@
       <label>Additional Notes</label>
       <textarea name="notes" rows="4"></textarea>
 
-      <button type="submit">Submit Appraisal</button>
+      <button type="submit">Submit</button>
     </form>
     <p id="responseMsg"></p>
   </div>
@@ -205,10 +202,15 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
 
       fetch('https://script.google.com/macros/s/AKfycbwCpuPPF1zm3TvZoOgSyy0D1S4uTzd6hw_CMCFeAeHgCiSa2FKmoVVu13GNfvb8T5Rg/exec', {
         method: 'POST',
-        body: formData
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
       })
       .then(response => response.text())
       .then(result => {
